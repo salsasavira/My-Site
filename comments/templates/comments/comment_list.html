@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">{{ title }}</a></h1>
+            <h1><a href="/"> Total: {{ total }}</a></h1>
+        </div>
+
+        <div>
+
+        {% for comment in comments %} <!-- % for comment in comments % = % for comment in b %--> <!-- b yang ada didalam views-->
+        <div>
+            <p>{{ comment.post.text }}</p>  <!-- comment dan post saling berhubungan karena adanya foreign key. jadi dari comment bisa mengambil text yg ada di post-->
+            <p>{{ comment.comment|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
+        </div>
+
+    </body>
+</html>
